@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Enza Sciusco">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet"> <!-- font importato Titillium -->
+    <link rel="shortcut icon" href="favicon.png"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">  <!-- collegamento al file css -->
+    <link rel="stylesheet" href="style-navbar.css">  <!-- collegamento al file css della navbar-->
+    <title>SOLACE</title>
+</head>
+
+<style>
+
+#cont {
+    margin-top: 15rem;
+    }
+
+#myButton9,#myButton10,#myButtonC,
+#myButtonF,#myButton12,#myButton13,#myButton14{
+  padding: 10px 25px;
+}
+
+
+#divB9 {
+  top: 28.75rem;
+  left: 36.25rem;
+}  
+#mA9.moduloAula{
+  top: 20.5rem;
+  left: 38.75em;
+}
+
+#divB10 {
+  top: 28.75rem;
+  left: 31.75rem;
+}  
+#mA10.moduloAula{
+  top: 20.5rem;
+  left: 34.25rem;
+}
+
+#divB12 {
+  top: 24.5rem;
+  left: 22rem;
+}  
+#mA12.moduloAula{
+  top: 17rem;
+  left: 24.65rem;
+}
+
+#divBC {
+  top: 24.45rem;
+  left: 13.75rem;
+}  
+#mAC.moduloAula{
+  top: 17rem;
+  left: 16.65rem;
+}
+
+#divBF {
+  top: 24.25rem;
+  left: 7.75rem;
+}  
+#mAF.moduloAula{
+  top: 17rem;
+  left: 10.5rem;
+}
+
+#divB13 {
+  top: -1.75rem;
+  left: 29.35rem;
+}  
+#mA13.moduloAula{
+  top: -8.5rem;
+  left: 32rem;
+}
+
+#divB14 {
+  top: 5rem;
+  left: 30.25rem;
+}  
+#mA14.moduloAula{
+  top: -3rem;
+  left: 32.75rem;
+}
+
+
+</style>
+
+<body>
+  <header class="header" style="    max-height: 3rem;">
+    <a href="documento ops 2023_2024 def..pdf" target="_blank" class="solace">SOLACE</a>
+    <a onclick="location.reload()" class="pianoT">1° PIANO</a>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+        <i class='bx bx-menu' id="menu-icon" style="margin-right: 10px;"></i>
+        <i class='bx bx-x' id="close-icon"></i>
+    </label>
+
+    <nav class="navbar">
+      <a href="index.html"style="--i:0;">Generale</a>
+        <a href="0.html"style="--i:0;">Piano Terra</a>
+        <a href="2.html"style="--i:1;">2° piano</a>
+        <a href="3.html"style="--i:2;">3° piano</a>
+        <a href="4.html"style="--i:3;">4° piano</a>
+        <a href="https://www.arduinolabliceocafiero.it/" target="_blank" >visita il nostro sito</a>
+      </nav>
+
+    <nav class="navbar-pc">
+      <a href="index.html"style="--i:0;">Generale</a>
+      <a href="0.html">Piano Terra</a>
+      <a href="2.html">2° piano</a>
+      <a href="3.html">3° piano</a>
+      <a href="4.html">4° piano</a>
+      <a class="sito" href="https://www.arduinolabliceocafiero.it/" target="_blank">visita il nostro sito</a>
+    </nav>
+  </header>
+
+
+  <div class="container" id="cont">
+
+<!-- Div del caricamento -->
+<div class="loader-container" id="loaderContainer">
+  <div class="loader"></div>
+</div>
+
+<div class="piantina">
+  <img src="1 piano.png" style="width: 800px;">
+
+<!-- Div del bottone e del pop-up 9 -->
+<div class="divButton" id="divB9">
+  <input type="button" id="myButton9" class="pallino" value="" 
+  onmouseover="showModuloAula(9)" onmouseout="hideModuloAula(9)"/>
+  <hr class="hr" id="r9">
+</div>
+
+<div class="moduloAula" data-aula="9" id="mA9">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 10 -->
+<div class="divButton" id="divB10">
+  <input type="button" id="myButton10" class="pallino" value="" 
+  onmouseover="showModuloAula(10)" onmouseout="hideModuloAula(10)"/>
+  <hr class="hr" id="r10">
+</div>
+
+<div class="moduloAula" data-aula="10" id="mA10">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up lab Fisica -->
+<div class="divButton" id="divBF">
+  <input type="button" id="myButtonF" class="pallino" value="" 
+  onmouseover="showModuloAula('F')" onmouseout="hideModuloAula('F')"/>
+  <hr class="hr" id="rF">
+</div>
+
+<div class="moduloAula" data-aula="F" id="mAF">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up lab Chimica -->
+<div class="divButton" id="divBC">
+  <input type="button" id="myButtonC" class="pallino" value="" 
+  onmouseover="showModuloAula('C')" onmouseout="hideModuloAula('C')"/>
+  <hr class="hr" id="rC">
+</div>
+
+<div class="moduloAula" data-aula="C" id="mAC">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+<!-- Div del bottone e del pop-up 12 -->
+<div class="divButton" id="divB12">
+  <input type="button" id="myButton12" class="pallino" value="" 
+  onmouseover="showModuloAula(12)" onmouseout="hideModuloAula(12)"/>
+  <hr class="hr" id="r12">
+</div>
+
+<div class="moduloAula" data-aula="12" id="mA12">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 13 -->
+<div class="divButton" id="divB13">
+  <input type="button" id="myButton13" class="pallino" value="" 
+  onmouseover="showModuloAula(13)" onmouseout="hideModuloAula(13)"/>
+  <hr class="hr" id="r13">
+</div>
+
+<div class="moduloAula" data-aula="13" id="mA13">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 14 -->
+<div class="divButton" id="divB14">
+  <input type="button" id="myButton14" class="pallino" value="" 
+  onmouseover="showModuloAula(14)" onmouseout="hideModuloAula(14)"/>
+  <hr class="hr" id="r14">
+</div>
+
+<div class="moduloAula" data-aula="14" id="mA14">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+<p class="liceo">LICEO STATALE C. CAFIERO - BARLETTA</p>
+</div>
+</div>
+</body>
+<script src="script.js"></script> <!-- collegamento al file JavaScript -->
+<script src="fastApiClient.js"></script> <!-- collegamento al file JavaScript -->
+</html>  

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Enza Sciusco">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet"> <!-- font importato Titillium -->
+    <link rel="shortcut icon" href="favicon.png"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">  <!-- collegamento al file css -->
+    <link rel="stylesheet" href="style-navbar.css">  <!-- collegamento al file css della navbar-->
+    <title>SOLACE</title>
+</head>
+
+<style>
+
+#cont {
+    margin-top: 5rem;
+    }
+
+    #myButton26a,#myButton26b,#myButtonL,
+#myButtonI,#myButton28,#myButton29,#myButton30,#myButtonD,
+#myButton32,#myButton33,#myButton34,#myButton35,
+#myButton36{
+  padding: 10px 25px;
+}
+
+
+#divB26a{
+  top: 23rem;
+  left: 45.75rem;
+}
+#mA26a.moduloAula{
+  top: 15.5rem;
+  left: 48rem;
+}
+
+#divB26b{
+  top: 20.5rem;
+  left: 43rem;
+}
+#mA26b.moduloAula{
+  top: 12rem;
+  left: 44.85rem;
+}
+
+#divBL{
+  top: 18rem;
+  left: 40.25rem;
+}
+#mAL.moduloAula{
+  top: 10rem;
+  left: 42rem;
+}
+
+#divBI{
+  top: 18rem;
+  left: 36rem;
+}
+#mAI.moduloAula{
+  top: 10rem;
+  left: 38rem;
+}
+
+
+#divB28{
+  top: 22.75rem;
+  left: 30.5rem;
+}
+#mA28.moduloAula{
+  top: 15rem;
+  left: 32.5rem;
+}
+
+#divB29{
+  top: 23.5rem;
+  left: 26.5rem;
+}
+#mA29.moduloAula{
+  top: 16rem;
+  left: 28.75rem;
+}
+
+#divB30{
+  top: 22.75rem;
+  left: 22.25rem;
+}
+#mA30.moduloAula{
+  top: 16rem;
+  left: 24.5rem;
+}
+
+#divBD{
+  top: 17rem;
+  left: 22.25rem;
+}
+#mAD.moduloAula{
+  top: 9rem;
+  left: 24.5rem;
+}
+
+#divB33{
+  top: 22.75rem;
+  left: 16.5rem;
+}
+#mA33.moduloAula{
+  top: 15rem;
+  left: 18.75rem;
+}
+
+#divB34{
+  top: 23.5rem;
+  left: 12.5rem;
+}
+#mA34.moduloAula{
+  top: 16rem;
+  left: 14.75rem;
+}
+
+#divB35{
+  top: 22.75rem;
+  left: 8.5rem;
+}
+#mA35.moduloAula{
+  top: 16rem;
+  left: 10.75rem;
+}
+
+#divB36{
+  top: 16.75rem;
+  left: 8.5rem;
+}
+#mA36.moduloAula{
+  top: 9rem;
+  left: 10.75rem;
+}
+
+</style>
+
+<body>
+  <header class="header" style="max-height: 3rem;">
+    <a href="documento ops 2023_2024 def..pdf" target="_blank" class="solace">SOLACE</a>
+    <a onclick="location.reload()" class="pianoT">3° PIANO</a>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+        <i class='bx bx-menu' id="menu-icon" style="margin-right: 10px;"></i>
+        <i class='bx bx-x' id="close-icon"></i>
+    </label>
+
+    <nav class="navbar">
+      <a href="index.html"style="--i:0;">Generale</a>
+        <a href="0.html"style="--i:0;">Piano Terra</a>
+        <a href="1.html"style="--i:1;">1° piano</a>
+        <a href="2.html"style="--i:2;">2° piano</a>
+        <a href="4.html"style="--i:3;">4° piano</a>
+        <a href="https://www.arduinolabliceocafiero.it/" target="_blank">visita il nostro sito</a>
+      </nav>
+
+    <nav class="navbar-pc">
+      <a href="index.html"style="--i:0;">Generale</a>
+      <a href="0.html">Piano Terra</a>
+      <a href="1.html">1° piano</a>
+      <a href="2.html">2° piano</a>
+      <a href="4.html">4° piano</a>
+      <a class="sito" href="https://www.arduinolabliceocafiero.it/" target="_blank">visita il nostro sito</a>
+    </nav>
+  </header>
+
+ <div class="container" id="cont">
+
+    <!-- Div del caricamento -->
+    <div class="loader-container" id="loaderContainer">
+      <div class="loader"></div>
+    </div>
+    
+    
+    <div class="piantina">
+      <img src="3 piano.png" style="width: 900px; height: 700px;">
+
+
+<!-- Div del bottone e del pop-up 26a -->
+<div class="divButton" id="divB26a">
+  <input type="button" id="myButton26a" class="pallino" value="" 
+  onmouseover="showModuloAula('26a')" onmouseout="hideModuloAula('26a')"/>
+  <hr class="hr" id="r26a">
+</div>
+
+<div class="moduloAula" data-aula="26a" id="mA26a">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 26b -->
+<div class="divButton" id="divB26b">
+  <input type="button" id="myButton26b" class="pallino" value="" 
+  onmouseover="showModuloAula('26b')" onmouseout="hideModuloAula('26b')"/>
+  <hr class="hr" id="r26b">
+</div>
+
+<div class="moduloAula" data-aula="26b" id="mA26b">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up L -->
+<div class="divButton" id="divBL">
+  <input type="button" id="myButtonL" class="pallino" value="" 
+  onmouseover="showModuloAula('L')" onmouseout="hideModuloAula('L')"/>
+  <hr class="hr" id="rL">
+</div>
+
+<div class="moduloAula" data-aula="L" id="mAL">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up lab Informatica -->
+<div class="divButton" id="divBI">
+  <input type="button" id="myButtonI" class="pallino" value="" 
+  onmouseover="showModuloAula('I')" onmouseout="hideModuloAula('I')"/>
+  <hr class="hr" id="rI">
+</div>
+
+<div class="moduloAula" data-aula="I" id="mAI">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 28 -->
+<div class="divButton" id="divB28">
+  <input type="button" id="myButton28" class="pallino" value="" 
+  onmouseover="showModuloAula(28)" onmouseout="hideModuloAula(28)"/>
+  <hr class="hr" id="r28">
+</div>
+
+<div class="moduloAula" data-aula="28" id="mA28">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 29 -->
+<div class="divButton" id="divB29">
+  <input type="button" id="myButton29" class="pallino" value="" 
+  onmouseover="showModuloAula(29)" onmouseout="hideModuloAula(29)"/>
+  <hr class="hr" id="r29">
+</div>
+
+<div class="moduloAula" data-aula="29" id="mA29">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 30 -->
+<div class="divButton" id="divB30">
+  <input type="button" id="myButton30" class="pallino" value="" 
+  onmouseover="showModuloAula(30)" onmouseout="hideModuloAula(30)"/>
+  <hr class="hr" id="r30">
+</div>
+
+<div class="moduloAula" data-aula="30" id="mA30">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up lab Disegno -->
+<div class="divButton" id="divBD">
+  <input type="button" id="myButtonD" class="pallino" value="" 
+  onmouseover="showModuloAula('D')" onmouseout="hideModuloAula('D')"/>
+  <hr class="hr" id="rD">
+</div>
+
+<div class="moduloAula" data-aula="D" id="mAD">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 33 -->
+<div class="divButton" id="divB33">
+  <input type="button" id="myButton33" class="pallino" value="" 
+  onmouseover="showModuloAula(33)" onmouseout="hideModuloAula(33)"/>
+  <hr class="hr" id="r33">
+</div>
+
+<div class="moduloAula" data-aula="33" id="mA33">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 34 -->
+<div class="divButton" id="divB34">
+  <input type="button" id="myButton34" class="pallino" value="" 
+  onmouseover="showModuloAula(34)" onmouseout="hideModuloAula(34)"/>
+  <hr class="hr" id="r34">
+</div>
+
+<div class="moduloAula" data-aula="34" id="mA34">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 35 -->
+<div class="divButton" id="divB35">
+  <input type="button" id="myButton35" class="pallino" value="" 
+  onmouseover="showModuloAula(35)" onmouseout="hideModuloAula(35)"/>
+  <hr class="hr" id="r35">
+</div>
+
+<div class="moduloAula" data-aula="35" id="mA35">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+
+<!-- Div del bottone e del pop-up 36 -->
+<div class="divButton" id="divB36">
+  <input type="button" id="myButton36" class="pallino" value="" 
+  onmouseover="showModuloAula(36)" onmouseout="hideModuloAula(36)"/>
+  <hr class="hr" id="r36">
+</div>
+
+<div class="moduloAula" data-aula="36" id="mA36">
+  <h2></h2>
+  <div id="output" title="" class="out"></div>
+</div>
+<!------------------------------------->
+
+<p class="liceo">LICEO STATALE C. CAFIERO - BARLETTA</p>
+</div>
+</div>
+</body>
+<script src="script.js"></script> <!-- collegamento al file JavaScript -->
+<script src="fastApiClient.js"></script> <!-- collegamento al file JavaScript -->
+</html>  

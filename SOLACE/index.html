@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Enza Sciusco">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet"> <!-- font importato Titillium -->
+    <link rel="shortcut icon" href="favicon.png"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style-navbar.css">  <!-- collegamento al file css della navbar-->
+    <link rel="stylesheet" href="table&loader.css">  <!-- collegamento al file css della tabella -->
+    <title>SOLACE</title>
+</head>
+
+
+<body style=" background: #00c5ae1b;">
+
+  <header class="header" style=" max-height: 6.38rem;">
+    <a href="documento ops 2023_2024 def..pdf" target="_blank" class="solace">SOLACE</a>
+    <a onclick="location.reload()" class="pianoT">GENERALE</a>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+        <i class='bx bx-menu' id="menu-icon" style="margin-right: 10px;" onclick="mostra_navbar();"></i>
+        <i class='bx bx-x' id="close-icon"></i>
+    </label>
+
+    <nav class="navbar" style="display: none;">
+      
+        <a href="0.html"style="--i:0;">Piano Terra</a>
+        <a href="1.html"style="--i:0;">1° piano</a>
+        <a href="2.html"style="--i:1;">2° piano</a>
+        <a href="3.html"style="--i:2;">3° piano</a>
+        <a href="4.html"style="--i:3;">4° piano</a>
+        <a href="https://www.arduinolabliceocafiero.it/" target="_blank">visita il nostro sito</a>
+      </nav>
+
+    <nav class="navbar-pc" style="margin-right: 1.6rem;">
+      <a href="0.html">Piano Terra</a>
+      <a href="1.html">1° piano</a>
+      <a href="2.html">2° piano</a>
+      <a href="3.html">3° piano</a>
+      <a href="4.html">4° piano</a>
+      <a class="sito" href="https://www.arduinolabliceocafiero.it/" target="_blank">visita il nostro sito</a>
+    </nav>
+  </header>  
+
+  <!-- Div del bottone di cerca-->
+  <div class="input-group mb-3" id="cerca" >
+    <input type="text" class="form-control" id="classe" placeholder="Cerca classe" aria-describedby="button-addon2" style="border-color: #22b09f;">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="cerca_classe()" style="background-color: #115c58;
+    color: #00fddf;
+    border-color: #00fddf; font-weight: 600;
+    border-width: 2.5px; border-color: #22b09f;" onmouseover="this.style.backgroundColor='#00fddf'; this.style.color='#115c58'; this.style.borderColor='#115c58';" onmouseout="this.style.backgroundColor='#115c58'; this.style.color='#00fddf'; this.style.borderColor='#00fddf';" >Cerca</button>
+  <button type="button" class="btn btn-secondary" id="x" onclick="show_tabella()" style="height: 2rem; width: 2rem; margin-left: 5px; border-radius: 50%; align-self: center; justify-content: center; align-items: center; display: flex; display: none;">X</button>
+</div>
+
+<!-- div che contiene la tabella di una classe -->
+<div class="table-container-classe"></div>
+
+<!-- Div del caricamento -->
+  <div class="loader-container" id="loaderContainer">
+    <div class="loader"></div>
+  </div>
+
+<!-- div che contiene la tabella -->
+<div class="table-container"></div>
+
+</body>
+<script src="index.js"></script> <!-- collegamento al file JavaScript -->
+<script src="fastApiClient.js"></script> <!-- collegamento al file JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+            var input = document.getElementById("classe");
+            input.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault(); // Previene l'azione predefinita (se ce n'è una)
+                    cerca_classe();}})})
+  
+  function mostra_navbar() {
+let navbar = document.querySelector(".navbar")
+navbar.style.display= "flex"
+  }
+</script>
+
+</html>
